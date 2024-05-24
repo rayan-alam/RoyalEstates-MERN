@@ -1,9 +1,11 @@
-import React, { useState } from 'React';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { signInStart } from '../redux/user/userSlice';
-import { signInSuccess } from '../redux/user/userSlice';
-import { signInFailure } from '../redux/user/userSlice';
+import { 
+    signInStart,
+    signInSuccess,
+    signInFailure
+ } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
 
 export default function Signin(){
@@ -75,5 +77,6 @@ export default function Signin(){
                 <span className='text-blue-700'>Sign Up</span>
             </Link>
         </div>
+        {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>)
 }
